@@ -1,0 +1,128 @@
+$grey-text: #6a6a6a;
+
+body {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+  }
+  background: #FFFFFF;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+}
+
+.blurb {
+  color: $grey-text;
+  font-size: 25px;
+}
+
+.contact {
+  margin-top: 50px;
+  width: 200px;
+}
+
+.grey-text {
+  color: $grey-text;
+}
+
+.hero {
+  .parent {
+    .child {
+      height: 300px;
+      margin: 50% auto;
+      padding: 0 20px;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      @media screen and (max-width: 960px) {
+        margin: 10% auto;
+      }
+    }
+    position: relative;
+  }
+  .parent:first-child {
+    .child {
+      text-align: left;
+    }
+  }
+  .parent:last-child {
+    .child {
+      text-align: right;
+    }
+  }
+}
+
+.lightbulb {
+  width: 180px;
+}
+
+.logo-text {
+  max-width: 400px;
+  width: 100%;
+  @media screen and (max-width: 480px) {
+    max-width: 260px;
+  }
+}
+
+.night {
+  background: #333333 url("../images/watermark.png") left no-repeat;
+  background-size: cover;
+  -webkit-animation: flickerAnimation 20s ease-out 3s infinite;
+  -moz-animation: flickerAnimation 20s ease-out 3s infinite;
+  -o-animation: flickerAnimation 20s ease-out 3s infinite;
+  animation: flickerAnimation 20s ease-out 3s infinite;
+}
+
+.point {
+  cursor: pointer;
+}
+
+.reveal {
+  .button {
+    margin-top: 30px;
+  }
+  .close-button {
+    :hover {
+      color: #FFFFFF;
+    }
+  }
+  form, label {
+    color: #FFFFFF;
+    font-size: 12pt;
+  }
+  border: none;
+  background: none;
+}
+
+@mixin keyframes($animate) {
+  @keyframes #{$animate} {
+    @content;
+  }
+
+  @-o-keyframes #{$animate} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animate} {
+    @content;
+  }
+
+  @-webkit-keyframes #{$animate} {
+    @content;
+  }
+}
+
+@include keyframes(flickerAnimation) {
+  0% {
+    background-color: #FFFFFF;
+  }
+  50% {
+    background-color: #333333;
+  }
+  75% {
+    background-color: #333333;
+  }
+  100% {
+    background-color: #FFFFFF;
+  }
+}
+

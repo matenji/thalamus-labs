@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap Innovate</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="night">
+<div class="row">
+    <div class="large-12 columns hero">
+        <div class="large-6 columns parent">
+            <div class="child">
+                <img class="logo-text" src="images/logo-text.png" alt="Snap Innovate"/>
+                <p class="blurb">
+                    Helping Innovative <br/>
+                    Enterprises and B2B Startups <br/>
+                    accelerate “time to value”
+                </p>
+                <!--<div>-->
+                <!--<a href="#" data-reveal-id="contactform" class="button"><img class="contact point" src="images/button.png"/></a>-->
+                <!--</div>-->
+                <!--<div id="contactform" class="reveal-modal" data-reveal>-->
+                <!--<div class="row">-->
+                <!--<div class="large-12 columns">-->
+                <!--<h5>Test</h5>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <img data-open="modal" class="contact point" src="images/button.png"/>
+            </div>
+        </div>
+        <div class="large-6 columns parent">
+            <div class="child hide-for-small-only">
+                <img class="lightbulb" src="images/logo.png"/>
+            </div>
+        </div>
+        <div class="reveal" id="modal" data-reveal>
+            <form enctype="multipart/form-data" method="post" novalidate
+                  action="https://snapinnovate.wufoo.com/forms/z19bs2680a5amkb/#public">
+                <div class="row log-in-form">
+                    <h4 class="text-left">FIND OUT MORE</h4>
+                    <div class="row">
+                        <label for="Field1" class="large-6 columns">
+                            First Name *
+                            <input id="Field1" name="Field1" required type="text">
+                        </label>
+                        <label for="Field2" class="large-6 columns">
+                            Last Name *
+                            <input id="Field2" name="Field2" required type="text">
+                        </label>
+                    </div>
+                    <label for="Field3">Email Address *
+                        <input id="Field3" name="Field3" type="email" required>
+                    </label>
+                    <label for="Field4">Message *
+                        <textarea id="Field4" name="Field4" required></textarea>
+                    </label>
+                    <p><input id="saveForm" name="saveForm" type="submit" class="button expanded" value="Submit"></p>
+                    <p class="hide">
+                        <label for="comment">Do Not Fill This Out</label>
+                        <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+                        <input type="hidden" id="idstamp" name="idstamp"
+                               value="KHOzjTwpLmtsS5LD4toLQT3MmZ4JVID5qrhYH/cmVow="/>
+                    </p>
+                </div>
+            </form>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.min.js"></script>
+</body>
+</html>
