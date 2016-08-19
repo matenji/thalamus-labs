@@ -1,128 +1,235 @@
-$grey-text: #6a6a6a;
+@mixin panel-decor() {
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+@mixin panel-inherit($height) {
+  .panel {
+    height: $height !important;
+  }
+  .panel > div {
+    position: initial !important;
+    transform: initial !important;
+  }
+}
+
+@mixin panel-bg($url) {
+  background: url($url) top center no-repeat;
+}
+
+html {
+  //overflow: hidden;
+}
 
 body {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 300;
+  color: #666666;
+  font-size: 18pt;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  //overflow-y: scroll;
+  //overflow-x: hidden;
+  //perspective: 1px;
+  //transform-style: preserve-3d;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333333;
+  font-family: Raleway, sans-serif;
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+#welcome {
+  h1 {
+    font-size: 45pt;
+    letter-spacing: 25px;
+    margin-bottom: 30pt;
   }
-  background: #FFFFFF;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
+  p {
+    font-size: 20pt;
+    line-height: 30pt;
+    max-width: 800px;
+  }
+  span {
+    letter-spacing: 5px;
+  }
 }
 
-.blurb {
-  color: $grey-text;
-  font-size: 25px;
+.active {
+  background: #01ccff;
 }
 
-.contact {
+.clients {
+  margin-top: 20px;
+  img:hover {
+    opacity: 0.6;
+  }
+}
+
+.clients div > div {
+  padding: 20px;
+}
+
+.contact-email {
   margin-top: 50px;
-  width: 200px;
+}
+
+.experience {
+  font-size: 10pt;
+  list-style-type: none;
+  margin-left: 0;
+  li:before {
+    content: "\0040\0020";
+  }
 }
 
 .grey-text {
-  color: $grey-text;
+  color: #CCCCCC;
 }
 
-.hero {
-  .parent {
-    .child {
-      height: 300px;
-      margin: 50% auto;
-      padding: 0 20px;
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      @media screen and (max-width: 960px) {
-        margin: 10% auto;
-      }
-    }
-    position: relative;
-  }
-  .parent:first-child {
-    .child {
-      text-align: left;
-    }
-  }
-  .parent:last-child {
-    .child {
-      text-align: right;
-    }
-  }
+.panel {
+  box-sizing: border-box;
+  height: 1000px;
+  position: relative;
+  transform-style: inherit;
 }
 
-.lightbulb {
-  width: 180px;
+.panel:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.logo-text {
-  max-width: 400px;
+.panel, .panel:before {
+  background: 50% 50% / cover;
+}
+
+.panel > div {
+  left: -50%;
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 20px;
+  position: absolute;
+  right: -50%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
-  @media screen and (max-width: 480px) {
-    max-width: 260px;
-  }
 }
 
-.night {
-  background: #333333 url("../images/watermark.png") left no-repeat;
-  background-size: cover;
-  -webkit-animation: flickerAnimation 20s ease-out 3s infinite;
-  -moz-animation: flickerAnimation 20s ease-out 3s infinite;
-  -o-animation: flickerAnimation 20s ease-out 3s infinite;
-  animation: flickerAnimation 20s ease-out 3s infinite;
+.panel.one {
+  @include panel-bg("../images/bg/1.png");
+  @include panel-decor();
 }
 
-.point {
-  cursor: pointer;
+.panel.two {
+  @include panel-bg("../images/bg/2.png");
+  @include panel-decor();
 }
 
-.reveal {
-  .button {
-    margin-top: 30px;
+.panel.three {
+  @include panel-bg("../images/bg/3.png");
+  @include panel-decor();
+}
+
+.panel.four {
+  @include panel-bg("../images/bg/4.png");
+  @include panel-decor();
+}
+
+.panel.five {
+  @include panel-bg("../images/bg/5.png");
+  @include panel-decor();
+}
+
+.profile-card {
+  hr {
+    border-bottom: 5px #F3F3F3 solid;
+    margin-top: 10px;
   }
-  .close-button {
-    :hover {
-      color: #FFFFFF;
-    }
+  img {
+    max-width: 200px;
   }
-  form, label {
-    color: #FFFFFF;
+  .about-icon {
+    height: 80px;
+    margin: 20px;
+  }
+  .profile-info p {
     font-size: 12pt;
   }
-  border: none;
-  background: none;
+  .profile-pic {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    margin-bottom: 20px;
+  }
+  .profile-pic:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+
+  .subheader {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+  span {
+    color: #bfbfbf;
+  }
+  margin: 15px auto;
 }
 
-@mixin keyframes($animate) {
-  @keyframes #{$animate} {
-    @content;
-  }
+.quote-img {
+  padding: 30px;
+  width: 130px;
+}
 
-  @-o-keyframes #{$animate} {
-    @content;
-  }
-
-  @-moz-keyframes #{$animate} {
-    @content;
-  }
-
-  @-webkit-keyframes #{$animate} {
-    @content;
+.top-bar {
+  background: #333333;
+  ul {
+    background: #333333;
+    font-weight: bold;
+    a {
+      color: #FFFFFF;
+    }
+    a:hover {
+      color: #0082d7;
+    }
   }
 }
 
-@include keyframes(flickerAnimation) {
-  0% {
-    background-color: #FFFFFF;
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  body {
+    font-size: 12pt;
   }
-  50% {
-    background-color: #333333;
-  }
-  75% {
-    background-color: #333333;
-  }
-  100% {
-    background-color: #FFFFFF;
+  @include panel-inherit(inherit);
+}
+
+/* Medium down */
+@media screen and (max-width: 63.9375em) {
+  #welcome {
+    h1 {
+      font-size: 35pt;
+      letter-spacing: 5px;
+    }
+    p {
+      font-size: 15pt;
+    }
   }
 }
 
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  body {
+    font-size: 14pt;
+  }
+  @include panel-inherit(inherit);
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+  @include panel-inherit(inherit);
+}
