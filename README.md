@@ -1,8 +1,6 @@
-# Foundation for Sites Template
+# Thalamus Labs Website
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
-
-This is the basic starter project for [Foundation for Sites 6](http://foundation.zurb.com/sites). It includes a Sass compiler and a starter HTML file for you.
+This is the Thalamus Labs file repo to continue developing the website on your local system.
 
 ## Installation
 
@@ -11,33 +9,15 @@ To use this template, your computer needs:
 - [NodeJS](https://nodejs.org/en/) (0.12 or greater)
 - [Git](https://git-scm.com/)
 
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
-
-### Using the CLI
-
-Install the Foundation CLI with this command:
-
-```bash
-npm install foundation-cli --global
-```
-
-Use this command to set up a blank Foundation for Sites project with this template:
-
-```bash
-foundation new --framework sites --template basic
-```
-
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
-
 ### Manual Setup
 
-To manually set up the template, first download it with Git:
+To manually set up the site, first download it with Git:
 
 ```bash
-git clone https://github.com/zurb/foundation-sites-template projectname
+git clone https://github.com/matenji/thalamus-labs.git projectname
 ```
 
-Then open the folder in your command line, and install the needed dependencies:
+Then open the folder (projectname) in your command line, and install the needed dependencies:
 
 ```bash
 cd projectname
@@ -45,4 +25,4 @@ npm install
 bower install
 ```
 
-Finally, run `npm start` to run the Sass compiler. It will re-run every time you save a Sass file.
+Finally, run `gulp build && npm start` to run the Sass compiler and browser-sync. It will re-run every time you save a Sass file. All the rendered files gets spit into a folder called dist/ which you can upload to the web host using your account's FTP login info.
