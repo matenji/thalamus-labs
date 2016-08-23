@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  color: #666666;
+  color: #bbbbbb;
   font-size: 18pt;
   font-family: Raleway, sans-serif;
   font-weight: 400;
@@ -33,19 +33,33 @@ body {
   //transform-style: preserve-3d;
 }
 
+h1 {
+  color: #818181;
+}
+
+h2, h3, h4, h5, h6 {
+  color: #bbbbbb;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  color: #333333;
   font-family: Raleway, sans-serif;
   font-size: 35px;
   font-weight: 800;
   letter-spacing: 5px;
 }
 
+//#page {
+//  scroll-behavior: smooth;
+//  scroll-snap-type: mandatory;
+//  scroll-snap-destination: 0% 100%;
+//  scroll-snap-points-y: repeat(100%);
+//}
+
 #welcome {
   h1 {
-    font-size: 45pt;
+    font-size: 40pt;
     letter-spacing: 25px;
-    margin-bottom: 30pt;
+    margin-bottom: 50pt;
   }
   p {
     font-size: 20pt;
@@ -58,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .active {
-  background: #01ccff;
+  color: #009bf7 !important;
 }
 
 .clients {
@@ -111,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .panel > div {
   left: -50%;
-  margin: 30px auto;
+  margin: 82px auto;
   max-width: 1000px;
   padding: 20px;
   position: absolute;
@@ -166,10 +180,10 @@ h1, h2, h3, h4, h5, h6 {
     filter: grayscale(100%);
     margin-bottom: 20px;
   }
-  .profile-pic:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-  }
+  //.profile-pic:hover {
+  //  -webkit-filter: grayscale(0);
+  //  filter: grayscale(0);
+  //}
 
   .subheader {
     font-size: 12pt;
@@ -191,15 +205,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .top-bar {
-  background: #333333;
+  background: none;
   ul {
-    background: #333333;
-    font-weight: bold;
+    background: none;
     a {
-      color: #FFFFFF;
+      color: #000000;
+      span:first-child {
+        //color: #000000;
+        font-size: 12pt;
+        opacity: 0;
+      }
     }
     a:hover {
-      color: #0082d7;
+      span:first-child {
+        opacity: 1;
+      }
+      //color: #0082d7;
     }
   }
 }
@@ -216,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 63.9375em) {
   #welcome {
     h1 {
-      font-size: 35pt;
+      font-size: 28pt;
       letter-spacing: 5px;
     }
     p {
